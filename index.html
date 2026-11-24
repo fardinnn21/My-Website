@@ -142,26 +142,15 @@
     .video-thumb {
       position: relative; width: 100%;
       background: #1a1a1a;
-      display: flex; align-items: center; justify-content: center;
       overflow: hidden;
     }
+    .video-thumb.landscape { aspect-ratio: 16/9; }
+    .video-thumb.portrait  { aspect-ratio: 9/16; }
 
-    .video-thumb video {
-      width: 100%; display: block;
+    .video-thumb iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: none;
     }
-    .play-overlay {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(0,0,0,.3);
-      opacity: 1; transition: opacity .2s; cursor: pointer;
-    }
-    .play-overlay.hidden { opacity: 0; pointer-events: none; }
-    .play-icon {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: rgba(255,255,255,.15); backdrop-filter: blur(8px);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .play-icon svg { width: 24px; height: 24px; fill: #fff; margin-left: 3px; }
 
     .video-info { padding: 14px 16px; }
     .video-info h3 { font-size: .95rem; font-weight: 600; }
@@ -308,27 +297,21 @@
 
     <div class="video-grid">
 
-      <!-- CARD 1 — Botanical Hair Oil -->
+      <!-- CARD 1 — BengalBot (16:9) -->
       <div class="video-card fade-up">
-        <div class="video-thumb">
-          <video src="https://youtube.com/shorts/aR4KA_CbrjU" muted loop playsinline preload="metadata"></video>
-          <div class="play-overlay" onclick="toggleVideo(this)">
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-          </div>
+        <div class="video-thumb landscape">
+          <iframe src="https://www.youtube.com/embed/19kmv9Wh4Sc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-info">
-          <h3>Botanical Hair Oil</h3>
+          <h3>BengalBot</h3>
           <span class="video-tag">Meta Ad</span>
         </div>
       </div>
 
-      <!-- CARD 2 — Flyora -->
+      <!-- CARD 2 — Flyora (16:9) -->
       <div class="video-card fade-up">
-        <div class="video-thumb">
-          <video src="https://youtu.be/pj7eylED8gU" muted loop playsinline preload="metadata"></video>
-          <div class="play-overlay" onclick="toggleVideo(this)">
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-          </div>
+        <div class="video-thumb landscape">
+          <iframe src="https://www.youtube.com/embed/pj7eylED8gU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-info">
           <h3>Flyora</h3>
@@ -336,72 +319,35 @@
         </div>
       </div>
 
-      <!-- CARD 3 — EcomTech SD -->
+      <!-- CARD 3 — Botanical Hairoil (9:16 Short) -->
       <div class="video-card fade-up">
-        <div class="video-thumb">
-          <video src="https://youtube.com/shorts/TGUOTGlGqG8" muted loop playsinline preload="metadata"></video>
-          <div class="play-overlay" onclick="toggleVideo(this)">
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-          </div>
+        <div class="video-thumb portrait">
+          <iframe src="https://www.youtube.com/embed/aR4KA_CbrjU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-info">
-          <h3>EcomTech SD</h3>
-          <span class="video-tag">Meta Ad</span>
+          <h3>Botanical Hairoil</h3>
+          <span class="video-tag">Talking Head</span>
         </div>
       </div>
 
-      <!-- CARD 4 — Amar Solution -->
+      <!-- CARD 4 — Amar Solution (9:16 Short) -->
       <div class="video-card fade-up">
-        <div class="video-thumb">
-          <video src="https://youtube.com/shorts/Np0EiwgXuvE" muted loop playsinline preload="metadata"></video>
-          <div class="play-overlay" onclick="toggleVideo(this)">
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-          </div>
+        <div class="video-thumb portrait">
+          <iframe src="https://www.youtube.com/embed/Np0EiwgXuvE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-info">
           <h3>Amar Solution</h3>
-          <span class="video-tag">Meta Ad</span>
-        </div>
-      </div>
-
-      <!-- CARD 5 — BengalBot -->
-      <div class="video-card fade-up">
-        <div class="video-thumb">
-          <video src="https://youtu.be/19kmv9Wh4Sc" muted loop playsinline preload="metadata"></video>
-          <div class="play-overlay" onclick="toggleVideo(this)">
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-          </div>
-        </div>
-        <div class="video-info">
-          <h3>BengalBot</h3>
           <span class="video-tag">Talking Head</span>
         </div>
       </div>
 
-      <!-- CARD 6 — ChatGPT -->
+      <!-- CARD 5 — EcomTech (9:16 Short) -->
       <div class="video-card fade-up">
-        <div class="video-thumb">
-          <video src="Videos/Chatgpt.mp4" muted loop playsinline preload="metadata"></video>
-          <div class="play-overlay" onclick="toggleVideo(this)">
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-          </div>
+        <div class="video-thumb portrait">
+          <iframe src="https://www.youtube.com/embed/TGUOTGlGqG8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-info">
-          <h3>ChatGPT</h3>
-          <span class="video-tag">Talking Head</span>
-        </div>
-      </div>
-
-      <!-- CARD 7 — Freelancing Journey -->
-      <div class="video-card fade-up">
-        <div class="video-thumb">
-          <video src="Videos/Freelancing%20journey.mp4" muted loop playsinline preload="metadata"></video>
-          <div class="play-overlay" onclick="toggleVideo(this)">
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div>
-          </div>
-        </div>
-        <div class="video-info">
-          <h3>Freelancing Journey</h3>
+          <h3>EcomTech</h3>
           <span class="video-tag">Talking Head</span>
         </div>
       </div>
@@ -504,19 +450,6 @@
     navLinks.classList.toggle('open');
   });
   function closeMenu() { navLinks.classList.remove('open'); }
-
-  // ── Video play/pause ──
-  function toggleVideo(overlay) {
-    const video = overlay.previousElementSibling;
-    if (!video.src || video.src === window.location.href) return; // no source set
-    if (video.paused) {
-      video.play();
-      overlay.classList.add('hidden');
-    } else {
-      video.pause();
-      overlay.classList.remove('hidden');
-    }
-  }
 
   // ── Scroll fade-in ──
   const observer = new IntersectionObserver((entries) => {
